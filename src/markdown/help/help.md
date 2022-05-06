@@ -1,0 +1,1 @@
+Shows detailed info on a command, if there is any!
