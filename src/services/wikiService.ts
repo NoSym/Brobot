@@ -28,6 +28,9 @@ export const wikiSearch = async (term: string): Promise<string> => {
     })
 
     const response = await fetchAsync<WikiResponse>(URL_WIKI + queryParams)
+
+    if (!response || !response.query || !response.query.pages) return 'idk'
+
     const keyString = Object.keys(response.query.pages)[0]
     const key = parseInt(keyString)
     const page = response.query.pages[key]
