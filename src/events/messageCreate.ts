@@ -10,6 +10,8 @@ const messageCreate: DiscordEvent = {
 
         const client = message.client as CustomClient
 
+        if (message.author == client.user) return
+
         try {
             for (const handler of client.messageHandlers) {
                 await handler.handle(message)
